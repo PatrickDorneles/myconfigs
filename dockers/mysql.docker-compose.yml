@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_USER: 'developer'
+      MYSQL_PASSWORD: 'conductor_hanky_harmonica'
+      MYSQL_ROOT_PASSWORD: 'conductor_hanky_harmonica'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - mysql-db:/var/lib/mysql
+volumes:
+  mysql-db:
